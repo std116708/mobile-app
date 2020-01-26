@@ -447,7 +447,6 @@ function initialize() {
     }
 
     function getNearestPointsOfInterest(chosenStation) {
-
         var list = [];
         var poi = pointsOfInterest;
 
@@ -456,12 +455,11 @@ function initialize() {
                 .distanceTo([poi[i].lat, poi[i].lng]);
 
             if (distance < maxDistance) {
-
+                //προσθέτουμε την απόσταση απο το σταθμό πατινιών που βρίσκεται ο χρήστης στο αντικείμενο poi[i]  
+                poi[i].distanceFromStation = distance;
                 list.push(poi[i]);
-
-            
-
             }
+
 
 
         }
